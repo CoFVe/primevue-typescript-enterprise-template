@@ -5,6 +5,8 @@ import App from './App.vue';
 import PrimeVue from 'primevue/config';
 import InputText from 'primevue/inputtext';
 import Button from 'primevue/button';
+import Panel from 'primevue/panel';
+import Menu from 'primevue/panelmenu';
 
 import 'primevue/resources/themes/saga-blue/theme.css';
 import 'primevue/resources/primevue.min.css';
@@ -21,6 +23,8 @@ app.use(PrimeVue);
 
 app.component('InputText', InputText);
 app.component('Button', Button);
+app.component('Panel', Panel);
+app.component('Menu', Menu);
 
 initializeStore();
 initializeHttpClient(new AxiosOidcInterceptor(new AxiosResponseHandler()));
