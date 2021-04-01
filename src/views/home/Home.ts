@@ -1,11 +1,13 @@
+import { defineAsyncComponent } from 'vue';
 import { Options, Vue } from 'vue-class-component';
 
 @Options({
     name: "Home",
     components: {
-        HelloWorld: () => import(/* webpackChunkName: "hello-world" */ '@/components/hello-world/HelloWorld.vue')
+        HelloWorld: defineAsyncComponent(() => import(/* webpackChunkName: "hello-world" */ '@/components/hello-world/HelloWorld.vue'))
     }
 })
 export default class Home extends Vue {
+    public text = "";
 
 }
