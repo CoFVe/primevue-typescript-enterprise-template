@@ -1,14 +1,10 @@
-
-
 <template>
-
   <div class="app-container">
     <img alt="Vue logo" src="~@/assets/primevue-logo.png">
-    <HelloWorld msg="Welcome to Your PrimeVue + TypeScript App"/>
-    <form @submit.prevent="greet">
+    <HelloWorld msg="Welcome to Your PrimeVue + TypeScript App" />
+    <form>
       <InputText type="text" v-model="text"/>
       <Button type="submit" label="Submit"/>
-      <h3>{{message}}</h3>
     </form>
   </div>
 </template>
