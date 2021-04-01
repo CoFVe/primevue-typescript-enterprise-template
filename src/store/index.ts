@@ -4,23 +4,23 @@ import VuexORMAxios from '@vuex-orm/plugin-axios';
 import axios from 'axios';
 
 
+export let store!: Store<{}>;
+function setStore(currentStore: Store<{}>) {
+  store = currentStore;
+}
+
 export function initializeStore() {
     
-    VuexORM.use(VuexORMAxios, { axios });
-  
-    // Create a new instance of Database.
-    const database = new VuexORM.Database();
-  
-    // Register Models to Database.
-    // database.register(BattleshipEntity);
-    
-    setStore(new Vuex.Store({
-      plugins: [VuexORM.install(database)]
-    }));
+  VuexORM.use(VuexORMAxios, { axios });
 
-  }
+  // Create a new instance of Database.
+  const database = new VuexORM.Database();
 
-  export let store!: Store<{}>;
-  function setStore(currentStore: Store<{}>) {
-    store = currentStore;
-  }
+  // Register Models to Database.
+  // database.register(BattleshipEntity);
+  
+  setStore(new Vuex.Store({
+    plugins: [VuexORM.install(database)]
+  }));
+
+}
