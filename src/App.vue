@@ -8,10 +8,10 @@
                 <Menu id="config_menu" ref="menu" />
             </template>
             <div class="container-fluid">
-                <router-view v-slot="{ Component }">
-                    <transition>
+                 <router-view v-slot="{ Component }">
+                    <transition name="router-fade" mode="out-in">
                         <keep-alive>
-                        <component :is="Component" />
+                            <component :is="Component"/>
                         </keep-alive>
                     </transition>
                 </router-view>
